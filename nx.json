@@ -12,8 +12,10 @@
   "npmScope": "nx-example",
   "tasksRunnerOptions": {
     "default": {
+      "runner": "@nrwl/nx-cloud",
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "MWI1ZDQwY2ItOWMyOC00ZTg4LTgzMzQtM2FiZjcxMzkwOTdjfHJlYWQtd3JpdGU=",
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
@@ -43,8 +45,7 @@
       "tags": ["scope:cms", "type:data-access"]
     },
     "cms-feat-users": {
-      "tags": ["scope:cms", "type:feature"],
-      "implicitDependencies": ["shared-type-user"]
+      "tags": ["scope:cms", "type:feature"]
     }
   }
 }

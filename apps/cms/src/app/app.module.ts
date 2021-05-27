@@ -3,14 +3,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
-import { CmsFeatUsersModule } from '@nx-example/cms-feat-users';
-
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule, HttpClientModule, CmsFeatUsersModule, RouterModule,
+    BrowserModule, HttpClientModule, RouterModule,
     RouterModule.forRoot([
       {
         path: '',
