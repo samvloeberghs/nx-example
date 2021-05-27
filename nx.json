@@ -12,15 +12,8 @@
   "npmScope": "nx-example",
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
-        "accessToken": "MWI1ZDQwY2ItOWMyOC00ZTg4LTgzMzQtM2FiZjcxMzkwOTdjfHJlYWQtd3JpdGU=",
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
@@ -28,19 +21,30 @@
   },
   "projects": {
     "cms": {
-      "tags": []
+      "tags": ["scope:cms", "type:app"]
     },
     "cms-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "cms"
-      ]
+      "tags": ["scope:cms", "type:app"],
+      "implicitDependencies": ["cms"]
     },
     "api": {
-      "tags": []
+      "tags": ["scope:api", "type:app"]
     },
-    "api-interfaces": {
-      "tags": []
+    "api-feat-users": {
+      "tags": ["scope:api", "type:feature"]
+    },
+    "shared-type-user": {
+      "tags": ["scope:shared", "type:type"]
+    },
+    "api-data-access-users": {
+      "tags": ["scope:api", "type:data-access"]
+    },
+    "cms-data-access-users": {
+      "tags": ["scope:cms", "type:data-access"]
+    },
+    "cms-feat-users": {
+      "tags": ["scope:cms", "type:feature"],
+      "implicitDependencies": ["shared-type-user"]
     }
   }
 }

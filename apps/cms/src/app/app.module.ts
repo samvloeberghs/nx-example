@@ -1,13 +1,32 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+
+import { CmsFeatUsersModule } from '@nx-example/cms-feat-users';
 
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule],
+  imports: [
+    BrowserModule, HttpClientModule, CmsFeatUsersModule, RouterModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'users'
+      },
+      {
+        path: 'users',
+        loadChildren: () => {
+          return import('@nx-example/cms-feat-users').then((m) => m.CmsFeatUsersModule);
+        }
+      }
+    ])
+  ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}

@@ -15,7 +15,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-example/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@nx-example/api-feat-users": ["libs/api-feat-users/src/index.ts"],
+      "@nx-example/shared-type-user": ["libs/shared-type-user/src/index.ts"],
+      "@nx-example/api-data-access-users": [
+        "libs/api-data-access-users/src/index.ts"
+      ],
+      "@nx-example/cms-data-access-users": [
+        "libs/cms-data-access-users/src/index.ts"
+      ],
+      "@nx-example/cms-feat-users": ["libs/cms-feat-users/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
